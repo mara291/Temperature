@@ -1,0 +1,28 @@
+#!/bin/bash
+sudo true
+
+if [ "$#" == 0 ]; then
+        echo "You must provide an argument!"
+	echo "Usage: ./temperature [MAX TEMPERATURE] [PID]"
+fi
+
+while [true]
+do
+	arg=$1
+	min_temp=$((arg*1000))
+	t=$(cat /sys/class/thermal/thermal_zone0/temp)
+	if [ "$min_temp" -le "$t" ];
+	then
+		echo "TEMPERATURE OVER ${arg}°!!!"
+		if [ "$#" == 2 ]; then
+        		process=$2
+        		sudo kill -9 $process
+		fi
+
+	else
+		current=$((t/1000))
+		current="$current.0° degrees Celsius"
+		echo $current
+	fi
+	sleep 2
+done

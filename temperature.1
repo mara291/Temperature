@@ -1,0 +1,26 @@
+.\" Manual page for temperature
+.TH temperature 1 "April 2025" "1.0" "Temperature"
+
+.SH NAME
+temperature \- stop a program from running if the CPU temperature reaches a chosen number of degrees Celsius
+
+.SH SYNOPSIS
+.B temperature
+[\fIMAX_TEMPERATURE\fR]
+[\fIPID\fR]
+
+.SH DESCRIPTION
+Run the \fBtemperature\fR command if you are running CPU intensive programs and you want to make sure CPU temperature doesn't reach a critical level.
+.br
+The \fBtemperature\fR command will kill the process with the ID given so be careful to enter the PID of the correct program.
+
+.TP
+\fBMAX_TEMPERATURE\fR should be an integer representing degrees in Celsius
+.TP
+\fBPID\fR should be the PID of the process you want to be killed
+
+.SH REPORTING BUGS
+You can report any bugs at this email address: oprea.mara03@gmail.com
+
+.SH AUTHOR
+Mara Oprea 

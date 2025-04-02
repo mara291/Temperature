@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo cp temperature /usr/local/bin/temperature
+sudo cp temperature.1 /usr/share/man/man1  
+sudo mandb
