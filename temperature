@@ -6,7 +6,7 @@ if [ "$#" == 0 ]; then
 	echo "Usage: ./temperature [MAX TEMPERATURE] [PID]"
 fi
 
-while [true]
+while true
 do
 	arg=$1
 	min_temp=$((arg*1000))
@@ -17,6 +17,7 @@ do
 		if [ "$#" == 2 ]; then
         		process=$2
         		sudo kill -9 $process
+        		break
 		fi
 
 	else
